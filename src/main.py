@@ -24,10 +24,10 @@ class MainWindow(Ui_MainWindow, QtWidgets.QMainWindow):
 
 	def ListPorts(self):
 		if sys.platform.startswith('win'):
-			ports = ['COM%s' % (i + 1) for i in range(100)]
+			ports = ['COM%s' % (i + 1) for i in range(20)]
 		elif sys.platform.startswith('linux') or sys.platform.startswith('cygwin'):
-			ports = ['/dev/ttyACM%s' % i for i in range(100)]
-			for i in range(100):
+			ports = ['/dev/ttyACM%s' % i for i in range(20)]
+			for i in range(20):
 				ports.append('/dev/ttyUSB%s' % i)
 		else:
 			raise EnvironmentError('Unsupported platform')
@@ -41,7 +41,7 @@ class MainWindow(Ui_MainWindow, QtWidgets.QMainWindow):
 		self.comboBox_ComPort.addItems(result)
 
 	def OpenClosePort(self):
-		if self.pushButton_OpenClosePort.text() == 'Abrir Puerto':
+		if self.pushButton_OpenClosePort.text() == 'Open Port':
 			comport = self.comboBox_ComPort.currentText()
 			baudrate = self.comboBox_BaudRate.currentText()
 			self.mySerial.Open(comport,baudrate)
@@ -81,7 +81,7 @@ class MainWindow(Ui_MainWindow, QtWidgets.QMainWindow):
 	def Salir(self):
 		self.mySerial.Close()
 		self.mySerial.terminate()
-		time.sleep(1)
+		#time.sleep(1)
 		sys.exit()
 
 if __name__=='__main__':

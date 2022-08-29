@@ -14,10 +14,11 @@ class SerialPort(QThread):
 
 	def __del__(self):
 		self.seriport.close()
-		self.wait()
+		#self.wait()
 
 	def IsOpen(self):
 		return self.isopen
+		print("puerto abierto")
 
 	def Open(self, portname, baudrate):
 		self.seriport.port = portname
@@ -25,6 +26,7 @@ class SerialPort(QThread):
 		try:
 			self.seriport.open()
 			self.isopen = True
+			print("Puerto abierto :", self.seriport.port)
 		except (OSError, serial.SerialException):
 			pass
 
@@ -42,6 +44,7 @@ class SerialPort(QThread):
 			try:
 				self.seriport.close()
 				self.isopen=False
+				print("Puerto Cerrado: ", self.seriport.port)
 			except:
 				pass
 

@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>Images/refresh.jpg</file>
+    <file>Images/rad_shield.png</file>
+    <file>Images/logo-ipen.png</file>
+  </qresource>
+</RCC>

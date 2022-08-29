@@ -61,7 +61,7 @@
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap>Images/rad_shield.png</pixmap>
+           <pixmap resource="resource.qrc">:/newPrefix/Images/rad_shield.png</pixmap>
           </property>
           <property name="scaledContents">
            <bool>true</bool>
@@ -338,8 +338,8 @@
            <string/>
           </property>
           <property name="icon">
-           <iconset>
-            <normaloff>../GCounter/Images/refresh_icon.jpg</normaloff>../GCounter/Images/refresh_icon.jpg</iconset>
+           <iconset resource="resource.qrc">
+            <normaloff>:/newPrefix/Images/refresh.jpg</normaloff>:/newPrefix/Images/refresh.jpg</iconset>
           </property>
           <property name="iconSize">
            <size>
@@ -468,7 +468,7 @@
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>../GCounter/Images/logo-ipen.png</pixmap>
+         <pixmap resource="resource.qrc">:/newPrefix/Images/logo-ipen.png</pixmap>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -522,7 +522,7 @@
      <x>0</x>
      <y>0</y>
      <width>338</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuDile">
@@ -540,6 +540,8 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
  <connections/>
 </ui>
