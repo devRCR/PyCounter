@@ -25,7 +25,7 @@ class MainWindow(Ui_MainWindow, QtWidgets.QMainWindow):
 	def ListPorts(self):
 		if sys.platform.startswith('win'):
 			ports = ['COM%s' % (i + 1) for i in range(20)]
-		elif sys.platform.startswith('linux') or sys.platform.startswith('cygwin'):
+		elif sys.platform.startswith('Linux') or sys.platform.startswith('cygwin'):
 			ports = ['/dev/ttyACM%s' % i for i in range(20)]
 			for i in range(20):
 				ports.append('/dev/ttyUSB%s' % i)
